@@ -69,39 +69,10 @@ E4M9 = c4m9
 
 #ifdef FREEDM
 
-MAP01   = dm01
-MAP02   = dm02
-MAP03   = dm03
-MAP04   = dm04
-MAP05   = dm05
-MAP06   = dm06
-MAP07   = dm07
-MAP08   = dm08
-MAP09   = dm09
-MAP10   = dm10
-MAP11   = dm11
-MAP12   = dm12
-MAP13   = dm13
-MAP14   = dm14
-MAP15   = dm15
-MAP16   = dm16
-MAP17   = dm17
-MAP18   = dm18
-MAP19   = dm19
-MAP20   = dm20
-MAP21   = dm21
-MAP22   = dm22
-MAP23   = dm23
-MAP24   = dm24
-MAP25   = dm25
-MAP26   = dm26
-MAP27   = dm27
-MAP28   = dm28
-MAP29   = dm29
-MAP30   = dm30
-MAP31   = dm31
-MAP32   = dm32
-MAP33   = dummy
+MAP01   = dm17-ooo
+MAP02   = dm19-ooo
+MAP03   = dm22-ooo
+MAP04   = dm30-ooo
 
 #else   /* #ifdef FREEDM */
 
