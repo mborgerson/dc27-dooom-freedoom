@@ -11,7 +11,7 @@ FREEDOOM1=$(WADS)/freedoom1.wad
 FREEDOOM2=$(WADS)/freedoom2.wad
 FREEDM=$(WADS)/freedm.wad
 
-OBJS=$(FREEDM) $(FREEDOOM1) $(FREEDOOM2)
+OBJS=$(FREEDM)
 
 all: $(OBJS)
 
@@ -36,10 +36,6 @@ lumps/freedoom.lmp lumps/freedm.lmp: force
 
 wadinfo.txt: buildcfg.txt subdirs lumps/freedoom.lmp
 	$(CPP) -P -DDOOM2 < $< > $@
-wadinfo_phase1.txt: buildcfg.txt subdirs lumps/freedoom.lmp
-	$(CPP) -P -DDOOM1 -DULTDOOM < $< > $@
-wadinfo_phase2.txt: buildcfg.txt subdirs lumps/freedoom.lmp
-	$(CPP) -P -DDOOM2 < $< > $@
 wadinfo_freedm.txt : buildcfg.txt subdirs lumps/freedoom.lmp lumps/freedm.lmp
 	$(CPP) -P -DFREEDM < $< > $@
 
@@ -54,22 +50,6 @@ $(FREEDM): wadinfo_freedm.txt subdirs
 	@mkdir -p $(WADS)
 	rm -f $@
 	$(DEUTEX) $(DEUTEX_ARGS) -iwad -build wadinfo_freedm.txt $@
-
-#---------------------------------------------------------
-# phase 1 (udoom) iwad
-
-$(FREEDOOM1): wadinfo_phase1.txt subdirs
-	@mkdir -p $(WADS)
-	rm -f $@
-	$(DEUTEX) $(DEUTEX_ARGS) -iwad -build wadinfo_phase1.txt $@
-
-#---------------------------------------------------------
-# phase 2 (doom2) iwad
-
-$(FREEDOOM2): wadinfo_phase2.txt subdirs
-	@mkdir -p $(WADS)
-	rm -f $@
-	$(DEUTEX) $(DEUTEX_ARGS) -iwad -build wadinfo_phase2.txt $@
 
 %.html: %.adoc
 	TZ=UTC asciidoc $<
