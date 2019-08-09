@@ -69,10 +69,8 @@ E4M9 = c4m9
 
 #ifdef FREEDM
 
-MAP01   = dm17-ooo
-MAP02   = dm19-ooo
-MAP03   = dm22-ooo
-MAP04   = dm30-ooo
+MAP01   = dm19-ooo
+MAP02   = dm22-ooo
 
 #else   /* #ifdef FREEDM */
 
